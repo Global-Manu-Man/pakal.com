@@ -46,7 +46,7 @@
   
     <style>
 
-        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-simple img{
+        .goog-te-banner-frame.skiptranslate .goog-te-gadget-simple img{
             display: none !important;
         }
         .goog-tooltip{
@@ -69,7 +69,16 @@
         body{
             top: 0px !important;
         }
-        
+        div.goog-te-gadget {
+            color: transparent !important;
+            text-shadow: none !important;
+        }
+
+        #google_translate_element a {
+            display: none;
+        }
+
+
    
     </style>
 
@@ -99,6 +108,7 @@
                             <li class="d-none d-lg-block"><a href="#__contacto" class="nav-mainmenu-a scroll">Contacto</a></li>
                             <li>
                                 <div class="ml-2 --div-idioma" id="traslateLang">
+                                </br>
                                     <!-- <a href="en" class="nav-mainmenu-a d-flex align-items-center"><span class="mr-2">Switch</span> <img src="assets/img/flag-united-kingdom.png"></a> -->
                                 </div>
                             </li>
