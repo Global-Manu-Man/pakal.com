@@ -16452,6 +16452,41 @@ footer .widget {
   animation: toTopFromBottom 0.3s forwards;
 }
 
+/* Google translate */
+/* .goog-te-gadget .goog-te-combo {
+	width: 50%;
+	margin: auto;
+	position: relative;
+} */
+
+.goog-te-gadget .goog-te-combo {
+	background: #fff;
+	width: 100%;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, .16);
+	border-radius: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: .2s ease all;
+	margin-bottom: 30px;
+	padding: 15px;
+	position: relative;
+	z-index: 200;
+	border: 2px solid transparent;
+}
+.goog-te-gadget .goog-te-combo option{
+
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,.16);
+	max-height: 400px;
+	overflow: auto;
+	z-index: 100;
+	width: 100%;
+
+}
+
 @-webkit-keyframes toTopFromBottom {
   49% {
     -webkit-transform: translateY(-100%);
