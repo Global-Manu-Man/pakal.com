@@ -2105,3 +2105,45 @@ a.text-secondary:hover {
 .theme--light #__contacto .--contacto h2 {color: #252436;}
 .theme--light #__contacto .--contacto .--texto {color: #252436;}
 .theme--light #__contacto .--formulario ._btn_primary:hover {color: #252436;background-color: #fff;border-color: #e6e6e6;}
+
+
+/* =========GOOGLE TRADUCTOR========= */
+
+.goog-te-banner-frame.skiptranslate .goog-te-gadget-simple img {
+    display: none !important;
+}
+
+.goog-tooltip {
+    display: none !important;
+}
+
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.skiptranslate iframe {
+    display: none !important;
+}
+
+.goog-te-gadget span {
+    display: none;
+}
+
+body {
+    top: 0px !important;
+}
+
+div.goog-te-gadget {
+    color: transparent !important;
+    text-shadow: none !important;
+}
+
+#google_translate_element a {
+    display: none;
+}

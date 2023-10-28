@@ -505,4 +505,81 @@ var ColorSwitcher = (function() {
     
     ];
 
-    // ColorSwitcher.init(colorSheets);
+    // ===================
+
+    function loadGoogleTranslate() {
+        new google.translate.TranslateElement(
+            {
+                defaultLanguage: 'en',
+                pageLanguage: 'en',
+                includedLanguages: 'en,zh-CN,es,hi,ar,fr,ru,pt,de,ja,ko,it',
+                // layout:google.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+                multilanguagePage: true
+
+            },
+            'traslateLang'
+        );
+    }
+
+    // ===================
+
+     // -----------------------------------------------------------------------------
+        // Permite los tooltips (ventanas que muestra un poco de información sobre algún contenedor en el DOM)
+        // -----------------------------------------------------------------------------
+        $(function () { $('[data-toggle="tooltip"]').tooltip() });
+
+        // -----------------------------------------------------------------------------
+        // Smooth scrolling -- Va hacia el HASH (ej. .com/pagina#section-1)
+        // -----------------------------------------------------------------------------
+        var scrollLink = $('.scroll');
+
+        scrollLink.click(function (e) {
+            e.preventDefault();
+            $('body,html').animate({
+                scrollTop: $(this.hash).offset().top - 50
+            }, 1000);
+        });
+
+        // -----------------------------------------------------------------------------
+        // Este quedó obsoleto, ya no sirve (este sería el botón que reemplaza al de WhatsApp)
+        // ----------------------------------------------------------------------
+        $("#--btn-cambiar-tema--desktop").click(function () {
+            const __theme = $("body").attr("class");
+            // console.log(__theme);
+
+            if (__theme == 'theme--dark') {
+                // alert("es dark")
+                $('body').attr('class', 'theme--light');
+                $('#--btn-cambiar-tema--desktop .--img').attr('src', 'assets/img/theme-moon.svg');
+                $('.__header .logo').attr('src', 'assets/img/redseal-invert.svg');
+
+            } else if (__theme == 'theme--light') {
+                // alert("es light")
+                $('body').attr('class', 'theme--dark');
+                $('#--btn-cambiar-tema--desktop .--img').attr('src', 'assets/img/theme-sun.svg');
+                $('.__header .logo').attr('src', 'assets/img/redseal.svg');
+            }
+        })
+
+        // -----------------------------------------------------------------------------
+        // Clickear SOL y poner tema claro
+        // ----------------------------------------------------------------------
+        $(".__theme-sun").click(function () {
+
+            $('body').attr('class', 'theme--light');
+            $(".__theme-sun").addClass("d-none")
+            $(".__theme-moon").removeClass("d-none")
+            $('.__header .logo').attr('src', 'assets/img/redseal-invert.svg');
+        })
+
+        // -----------------------------------------------------------------------------
+        // Clickear LUNA y poner tema claro
+        // ----------------------------------------------------------------------
+        $(".__theme-moon").click(function () {
+
+            $('body').attr('class', 'theme--sun');
+            $(".__theme-moon").addClass("d-none")
+            $(".__theme-sun").removeClass("d-none")
+            $('.__header .logo').attr('src', 'assets/img/redseal.svg');
+        })
