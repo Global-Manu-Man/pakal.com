@@ -542,27 +542,6 @@ scrollLink.click(function (e) {
 });
 
 // -----------------------------------------------------------------------------
-// Este quedó obsoleto, ya no sirve (este sería el botón que reemplaza al de WhatsApp)
-// ----------------------------------------------------------------------
-$("#--btn-cambiar-tema--desktop").click(function () {
-    const __theme = $("body").attr("class");
-    // console.log(__theme);
-
-    if (__theme == 'theme--dark') {
-        // alert("es dark")
-        $('body').attr('class', 'theme--light');
-        $('#--btn-cambiar-tema--desktop .--img').attr('src', 'assets/img/theme-moon.svg');
-        $('.__header .logo').attr('src', 'assets/img/redseal-invert.svg');
-
-    } else if (__theme == 'theme--light') {
-        // alert("es light")
-        $('body').attr('class', 'theme--dark');
-        $('#--btn-cambiar-tema--desktop .--img').attr('src', 'assets/img/theme-sun.svg');
-        $('.__header .logo').attr('src', 'assets/img/redseal.svg');
-    }
-})
-
-// -----------------------------------------------------------------------------
 // Clickear SOL y poner tema claro
 // ----------------------------------------------------------------------
 $(".__theme-sun").click(function () {
@@ -570,7 +549,7 @@ $(".__theme-sun").click(function () {
     $('body').attr('class', 'theme--light');
     $(".__theme-sun").addClass("d-none")
     $(".__theme-moon").removeClass("d-none")
-    $('.__header .logo').attr('src', 'assets/img/redseal-invert.svg');
+    $('.__header .logo').attr('src', 'assets/img/logotipo.png');
 })
 
 // -----------------------------------------------------------------------------
@@ -581,7 +560,7 @@ $(".__theme-moon").click(function () {
     $('body').attr('class', 'theme--sun');
     $(".__theme-moon").addClass("d-none")
     $(".__theme-sun").removeClass("d-none")
-    $('.__header .logo').attr('src', 'assets/img/redseal.svg');
+    $('.__header .logo').attr('src', 'assets/img/icon-white.png');
 })
 
 

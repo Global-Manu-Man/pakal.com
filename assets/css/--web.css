@@ -1761,6 +1761,7 @@ a.text-secondary:hover {
     font-size: 17px;
     color: #d3d5dc;
     line-height: 1.4;
+    text-align: justify;
 }
 #__servicios img {
     max-height: 236px;object-fit: cover;object-position: center;
@@ -1812,6 +1813,7 @@ a.text-secondary:hover {
     color: #252436;
     line-height: 1.4;
     color: #e4e4e4;
+    text-align: justify;
 }
 #__por_que_elegirnos img {
     max-height: 236px;object-fit: cover;object-position: center;
