@@ -2102,6 +2102,7 @@ a.text-secondary:hover {
 .theme--light #__paquetes .card {border-color: #c4c4c4;}
 .theme--light #__paquetes h4 {color: #121317;}
 .theme--light #__paquetes ul li {color: #252436;}
+.theme--light #__paquetes .on-hover:hover{background-color: #d1d1f3;}
 .theme--light #__contacto {background: #e0e0e0;}
 .theme--light #__contacto .--formulario {background-blend-mode: color-dodge;}
 .theme--light #__contacto .--contacto h2 {color: #252436;}
