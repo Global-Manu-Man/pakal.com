@@ -2149,3 +2149,7 @@ div.goog-te-gadget {
 #google_translate_element a {
     display: none;
 }
+#__paquetes .on-hover:hover{
+
+    background-color: #0C0433;
+}
