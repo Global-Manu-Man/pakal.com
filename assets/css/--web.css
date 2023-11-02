@@ -2167,7 +2167,8 @@ div.goog-te-gadget {
     height: 50px;
     background: #fff8e1;
     bottom: 40px;
-    right: 50px;
+    left: 50%; /* Cambiado de "right" a "left" */
+    margin-left: -25px; /* Mitad del ancho del botón */
     text-decoration: none;
     text-align: center;
     line-height: 50px;
