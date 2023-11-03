@@ -685,3 +685,17 @@ $(window).load(function() {
       });
     });
   });
+
+
+  
+  $(document).ready(function() {
+    // Maneja el clic en los enlaces
+    $('.nav a').click(function() {
+        var targetSection = $(this).attr('href'); // Obtiene el valor del atributo href
+        var offset = $(targetSection).offset().top; // Obtiene la posición superior de la sección
+        $('html, body').animate({
+            scrollTop: offset // Desplaza la página al valor de offset
+        }, 1000); // Duración de la animación en milisegundos
+        return false; // Evita que el enlace realice la acción predeterminada
+    });
+});
