@@ -2179,9 +2179,10 @@ div.goog-te-gadget {
 }
 
   .nav {
-    position: relative;
+    position: fixed;
     left: 50%;
-    bottom: 100px;
+    bottom: 120px;
+    padding-bottom: 50px;
 
   }
   .nav a {
@@ -2239,17 +2240,7 @@ div.goog-te-gadget {
   .home.active .close, .home:not(.active) .open {
     display: block;
   }
-  h1 {
-    position: absolute;
-    top: 180px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 36px;
-    color: #FFFFFF;
-    letter-spacing: 1px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
+
   @media only screen and (max-width: 768px) {
     .phone {	
       width: 100%;
