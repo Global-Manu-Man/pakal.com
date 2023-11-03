@@ -687,19 +687,26 @@ $(window).load(function() {
   });
 
 
-
   $(document).ready(function() {
     // Maneja el clic en los enlaces
-    $('.nav a').click(function() {
+    $('.nav a').click(function(event) {
         var targetSection = $(this).attr('href'); // Obtiene el valor del atributo href
-        var offset = $(targetSection).offset().top; // Obtiene la posición superior de la sección
-        $('html, body').animate({
-            scrollTop: offset // Desplaza la página al valor de offset
-        }, 1000); // Duración de la animación en milisegundos
-        return false; // Evita que el enlace realice la acción predeterminada
+        var $target = $(targetSection); // Convierte el valor en un objeto jQuery
+        if ($target.length) {
+            var offset = $target.offset();
+            if (offset) {
+                var top = offset.top;
+                $('html, body').animate({
+                    scrollTop: top
+                }, 1000);
+            }
+        } else {
+            // Si el elemento no se encuentra en el DOM, el enlace se comportará de manera predeterminada
+            return true;
+        }
+        event.preventDefault(); // Evita que el enlace realice la acción predeterminada (solo si el elemento se encuentra en el DOM)
     });
 });
-
 
 $(document).ready(function() {
     // Habilite el arrastrar y soltar para el elemento .nav
