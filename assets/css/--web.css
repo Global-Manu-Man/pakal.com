@@ -2177,12 +2177,15 @@ div.goog-te-gadget {
     border: 1px solid rgb(129, 124, 124);
     border-radius: 10px;
 }
-
-  .nav {
+.nav {
     position: fixed;
     left: 50%;
     bottom: 120px;
     padding-bottom: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    cursor: move; /* Cambia el cursor a "mover" */
+    z-index: 9999; /* Asegura que esté en la parte superior */
 
   }
   .nav a {
@@ -2200,6 +2203,8 @@ div.goog-te-gadget {
     top: 50%;
     transform: translateY(-50%);
   }
+
+
   .nav a.home {
     width: 60px;
     height: 60px;

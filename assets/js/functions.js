@@ -687,7 +687,7 @@ $(window).load(function() {
   });
 
 
-  
+
   $(document).ready(function() {
     // Maneja el clic en los enlaces
     $('.nav a').click(function() {
@@ -698,4 +698,10 @@ $(window).load(function() {
         }, 1000); // Duración de la animación en milisegundos
         return false; // Evita que el enlace realice la acción predeterminada
     });
+});
+
+
+$(document).ready(function() {
+    // Habilite el arrastrar y soltar para el elemento .nav
+    $(".nav").draggable();
 });
