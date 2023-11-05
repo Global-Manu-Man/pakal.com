@@ -736,4 +736,23 @@ object.addEventListener('touchend', function() {
     isDragging = false;
 }, false);
 
-
+$(document).ready(function() {
+    // Maneja el clic en los enlaces
+    $('.nav a').click(function(event) {
+        var targetSection = $(this).attr('href'); // Obtiene el valor del atributo href
+        var $target = $(targetSection); // Convierte el valor en un objeto jQuery
+        if ($target.length) {
+            var offset = $target.offset();
+            if (offset) {
+                var top = offset.top;
+                $('html, body').animate({
+                    scrollTop: top
+                }, 1000);
+            }
+        } else {
+            // Si el elemento no se encuentra en el DOM, el enlace se comportará de manera predeterminada
+            return true;
+        }
+        event.preventDefault(); // Evita que el enlace realice la acción predeterminada (solo si el elemento se encuentra en el DOM)
+    });
+});
