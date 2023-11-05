@@ -2187,6 +2187,7 @@ div.goog-te-gadget {
     cursor: move; /* Cambia el cursor a "mover" */
     z-index: 9999; /* Asegura que esté en la parte superior */
     touch-action: none;
+    
    
   }
   .nav a {

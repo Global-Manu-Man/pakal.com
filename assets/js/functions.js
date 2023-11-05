@@ -690,6 +690,7 @@ $(window).load(function() {
   });
 
 // dragabble
+
 var object = document.getElementById('nav');
 var isDragging = false;
 var offsetX, offsetY;
@@ -700,7 +701,7 @@ object.addEventListener('mousedown', function(e) {
     offsetY = e.clientY - object.getBoundingClientRect().top;
 }, false);
 
-object.addEventListener('mousemove', function(e) {
+document.addEventListener('mousemove', function(e) {
     if (isDragging) {
         var newX = e.clientX - offsetX;
         var newY = e.clientY - offsetY;
@@ -709,7 +710,7 @@ object.addEventListener('mousemove', function(e) {
     }
 }, false);
 
-object.addEventListener('mouseup', function() {
+document.addEventListener('mouseup', function() {
     isDragging = false;
 }, false);
 
@@ -734,3 +735,5 @@ object.addEventListener('touchmove', function(e) {
 object.addEventListener('touchend', function() {
     isDragging = false;
 }, false);
+
+
