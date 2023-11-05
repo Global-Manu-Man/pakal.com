@@ -566,6 +566,8 @@ $(".__theme-moon").click(function () {
 
 // ================================
 
+
+
 // Validate email and message ok  
 const $form = document.querySelector('form');
 if ($form) {
@@ -686,29 +688,53 @@ $(window).load(function() {
     });
   });
 
+// dragabble
 
-  $(document).ready(function() {
-    // Maneja el clic en los enlaces
-    $('.nav a').click(function(event) {
-        var targetSection = $(this).attr('href'); // Obtiene el valor del atributo href
-        var $target = $(targetSection); // Convierte el valor en un objeto jQuery
-        if ($target.length) {
-            var offset = $target.offset();
-            if (offset) {
-                var top = offset.top;
-                $('html, body').animate({
-                    scrollTop: top
-                }, 1000);
-            }
-        } else {
-            // Si el elemento no se encuentra en el DOM, el enlace se comportará de manera predeterminada
-            return true;
-        }
-        event.preventDefault(); // Evita que el enlace realice la acción predeterminada (solo si el elemento se encuentra en el DOM)
-    });
-});
 
-$(document).ready(function() {
-    // Habilite el arrastrar y soltar para el elemento .nav
-    $(".nav").draggable();
-});
+var object = document.getElementById('nav'),
+initX, initY, firstX, firstY;
+
+object.addEventListener('mousedown', function(e) {
+
+	e.preventDefault();
+	initX = this.offsetLeft;
+	initY = this.offsetTop;
+	firstX = e.pageX;
+	firstY = e.pageY;
+
+	this.addEventListener('mousemove', dragIt, false);
+
+	window.addEventListener('mouseup', function() {
+		object.removeEventListener('mousemove', dragIt, false);
+	}, false);
+
+}, false);
+
+object.addEventListener('touchstart', function(e) {
+
+	e.preventDefault();
+	initX = this.offsetLeft;
+	initY = this.offsetTop;
+	var touch = e.touches;
+	firstX = touch[0].pageX;
+	firstY = touch[0].pageY;
+
+	this.addEventListener('touchmove', swipeIt, false);
+
+	window.addEventListener('touchend', function(e) {
+		e.preventDefault();
+		object.removeEventListener('touchmove', swipeIt, false);
+	}, false);
+
+}, false);
+
+function dragIt(e) {
+	this.style.left = initX+e.pageX-firstX + 'px';
+	this.style.top = initY+e.pageY-firstY + 'px';
+}
+
+function swipeIt(e) {
+	var contact = e.touches;
+	this.style.left = initX+contact[0].pageX-firstX + 'px';
+	this.style.top = initY+contact[0].pageY-firstY + 'px';
+}

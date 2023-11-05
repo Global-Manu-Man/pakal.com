@@ -2179,14 +2179,14 @@ div.goog-te-gadget {
 }
 .nav {
     position: fixed;
-    left: 50%;
+    /* left: 50%;
     bottom: 120px;
     padding-bottom: 50px;
-    border-radius: 50%;
+    border-radius: 50%; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
     cursor: move; /* Cambia el cursor a "mover" */
     z-index: 9999; /* Asegura que esté en la parte superior */
-
+   
   }
   .nav a {
     width: 50px;
