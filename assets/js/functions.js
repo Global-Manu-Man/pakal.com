@@ -605,6 +605,7 @@ function validate(email) {
 
 }
 
+
 $(window).load(function() {
     var tl = new TimelineMax({
         paused: true
@@ -689,52 +690,47 @@ $(window).load(function() {
   });
 
 // dragabble
-
-
-var object = document.getElementById('nav'),
-initX, initY, firstX, firstY;
+var object = document.getElementById('nav');
+var isDragging = false;
+var offsetX, offsetY;
 
 object.addEventListener('mousedown', function(e) {
-
-	e.preventDefault();
-	initX = this.offsetLeft;
-	initY = this.offsetTop;
-	firstX = e.pageX;
-	firstY = e.pageY;
-
-	this.addEventListener('mousemove', dragIt, false);
-
-	window.addEventListener('mouseup', function() {
-		object.removeEventListener('mousemove', dragIt, false);
-	}, false);
-
+    isDragging = true;
+    offsetX = e.clientX - object.getBoundingClientRect().left;
+    offsetY = e.clientY - object.getBoundingClientRect().top;
 }, false);
 
+object.addEventListener('mousemove', function(e) {
+    if (isDragging) {
+        var newX = e.clientX - offsetX;
+        var newY = e.clientY - offsetY;
+        object.style.left = newX + 'px';
+        object.style.top = newY + 'px';
+    }
+}, false);
+
+object.addEventListener('mouseup', function() {
+    isDragging = false;
+}, false);
+
+// Touch events for mobile
 object.addEventListener('touchstart', function(e) {
-
-	e.preventDefault();
-	initX = this.offsetLeft;
-	initY = this.offsetTop;
-	var touch = e.touches;
-	firstX = touch[0].pageX;
-	firstY = touch[0].pageY;
-
-	this.addEventListener('touchmove', swipeIt, false);
-
-	window.addEventListener('touchend', function(e) {
-		e.preventDefault();
-		object.removeEventListener('touchmove', swipeIt, false);
-	}, false);
-
+    var touch = e.touches[0];
+    isDragging = true;
+    offsetX = touch.clientX - object.getBoundingClientRect().left;
+    offsetY = touch.clientY - object.getBoundingClientRect().top;
 }, false);
 
-function dragIt(e) {
-	this.style.left = initX+e.pageX-firstX + 'px';
-	this.style.top = initY+e.pageY-firstY + 'px';
-}
+object.addEventListener('touchmove', function(e) {
+    if (isDragging) {
+        var touch = e.touches[0];
+        var newX = touch.clientX - offsetX;
+        var newY = touch.clientY - offsetY;
+        object.style.left = newX + 'px';
+        object.style.top = newY + 'px';
+    }
+}, false);
 
-function swipeIt(e) {
-	var contact = e.touches;
-	this.style.left = initX+contact[0].pageX-firstX + 'px';
-	this.style.top = initY+contact[0].pageY-firstY + 'px';
-}
+object.addEventListener('touchend', function() {
+    isDragging = false;
+}, false);
