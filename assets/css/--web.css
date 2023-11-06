@@ -2187,7 +2187,7 @@ div.goog-te-gadget {
     /* cursor: move;  Cambia el cursor a "mover" */
     /*z-index: 9999;  Asegura que esté en la parte superior */
     /* touch-action: none; */
-    position: fixed;
+    /* position: fixed; */
     left: 9%;
     /* bottom: 120px;
     padding-bottom: 650px; */
