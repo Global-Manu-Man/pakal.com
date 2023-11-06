@@ -2190,7 +2190,7 @@ div.goog-te-gadget {
     position: fixed;
     left: 9%;
     bottom: 120px;
-    padding-bottom: 770px;
+    padding-bottom: 650px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
     cursor: move; /* Cambia el cursor a "mover" */
