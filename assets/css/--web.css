@@ -2178,10 +2178,19 @@ div.goog-te-gadget {
     border-radius: 10px;
 }
 .nav {
-    position: fixed;
+    /* position: fixed;
     left: 50%;
     bottom: 120px;
     padding-bottom: 50px;
+    border-radius: 50%; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  Sombra */
+    /* cursor: move;  Cambia el cursor a "mover" */
+    /*z-index: 9999;  Asegura que esté en la parte superior */
+    /* touch-action: none; */
+    position: fixed;
+    left: 9%;
+    bottom: 120px;
+    padding-bottom: 770px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
     cursor: move; /* Cambia el cursor a "mover" */
@@ -2270,3 +2279,20 @@ div.goog-te-gadget {
       overflow-x: hidden;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .nav {
+      display: block;
+    }
+  
+    /* Estilos adicionales para dispositivos móviles si es necesario */
+  }
+  
+  @media only screen and (min-width: 769px) {
+    .nav {
+      display: none;
+    }
+  
+    /* Estilos adicionales para pantallas más grandes si es necesario */
+  }
+  
